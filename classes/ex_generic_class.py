@@ -21,21 +21,23 @@ else:
 from classes.author import Author
 test_class = Author
 ob = '302;Dawn Nelson;Canada;1994;1.8'
-db = 'data/Publishing.db'
+
+from classes.Books_Awards import Books_Awards
 #Uncomment to test class Product
-# from classes.product import Product
-# test_class = Product
-# ob='Product1;10.9;100'
+# from classes.books=import Books
+# test_class = Books
+# ob='899;Now seek;Fiction;2021'
 
 #Uncomment to test class Customer_login
-# from classes.customer import Customer
-# test_class = Customer
+# from classes.awards=import Awards
+# test_class = Awards
+# ob='4;machine'
 
 #Uncomment to test class Order
-# from classes.customerorder import ustomerOrder
-# from classes.customer import Customer
-# Customer.read('data/business.db')
-# test_class = Order
+# from classes.Books_Awards import Books_Awards
+# from classes.books import Books
+# from classes.awards=import Awards
+# test_class = Books_Awards
 
 
 

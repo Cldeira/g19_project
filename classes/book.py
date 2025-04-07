@@ -6,7 +6,7 @@ Created on Mon Mar 31 15:48:58 2025
 """
 from classes.gclass import Gclass
 
-class Book(Gclass):
+class Books(Gclass):
     
     obj = dict()
     lst = list()
@@ -20,14 +20,14 @@ class Book(Gclass):
     def __init__(self, id, title, genre, publication_year):
         super().__init__()
         
-        id = Book.get_id(id)
-        self._id = id
-        self._title = title
+        id = Books.get_id(id)
+        self._books_id = id
+        self._books_title = title
         self._genre = genre
         self._publication_year = int(publication_year)
         
-        Book.obj[id] = self 
-        Book.lst.append(id) 
+        Books.obj[id] = self 
+        Books.lst.append(id) 
     
     @property
     def id(self):

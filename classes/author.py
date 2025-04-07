@@ -13,17 +13,17 @@ class Author(Gclass):
     pos = 0
     sortkey = ''
 
-    att = ['_id', '_name', '_nationality', '_birth_year', '_royalty']
+    att = ['_id', '_authors_name', '_nationality', '_birth_year', '_royalty_percentage']
     des = ['Id', 'Name', 'Nationality', 'Birth Year', 'Royalty']
 
     def __init__(self, id, name, nationality, birth_year, royalty):
         super().__init__()
         id = Author.get_id(id)
         self._id = id
-        self._name = name
+        self._authors_name = name
         self._nationality = nationality
         self._birth_year = int(birth_year)
-        self._royalty = float(royalty)
+        self._royalty_percentage = float(royalty)
 
         Author.obj[id] = self
         Author.lst.append(id)

@@ -14,7 +14,7 @@ class Awards(Gclass):
     pos = 0
     sortkey = ''
     
-    att = ['_id', '_name']
+    att = ['_awards_id', '_award_name']
     
     des = ['Id', 'Name']
     
@@ -22,8 +22,8 @@ class Awards(Gclass):
         super().__init__()
         
         id = Awards.get_id(id)
-        self._id = id
-        self._name = name
+        self._awards_id = id
+        self._award_name = name
         
         Awards.obj[id] = self 
         Awards.lst.append(id) 
