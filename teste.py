@@ -35,7 +35,7 @@ else:
 from classes.author import Author
 test_class = Author
 ob = '302;Dawn Nelson;Canada;1994;1.8'
-db = 'C:/Users/Pedro/OneDrive - Universidade do Porto/PC2/TRABALHO/TRABALHO/data/Publishing.db'    
+db = 'Publishing.db'    
 
     
 
