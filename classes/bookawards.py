@@ -5,10 +5,10 @@ Created on Mon Mar 31 16:00:04 2025
 @author: Pedro
 """
 from classes.gclass import Gclass
-from classes.book import Book
+from classes.book import Books
 from classes.awards import Awards
 
-class BookAwards(Gclass):
+class Books_Awards(Gclass):
     
     obj = dict()
     lst = list()
@@ -27,15 +27,15 @@ class BookAwards(Gclass):
         awards_id = int(awards_id)
         books_id = int(books_id)
         
-        if awards_id in Awards.lst and books_id in Book.lst:
-            id = BookAwards.get_id(id)
+        if awards_id in Awards.lst and books_id in Books.lst:
+            id = Books_Awards.get_id(id)
             self._id = id
             self._awards_id = awards_id
             self._books_id = books_id
             self._year = int(year)
             
-            BookAwards.obj[id] = self
-            BookAwards.lst.append(id)
+            Books_Awards.obj[id] = self
+            Books_Awards.lst.append(id)
         else:
             print('Invalid Awards Id or Books Id')
     
@@ -60,10 +60,18 @@ class BookAwards(Gclass):
     
     @books_id.setter
     def books_id(self, value):
-        if value in Book.lst:
+        if value in Books.lst:
             self._books_id = value
         else:
             print('Invalid Books Id')
+    
+    @property
+    def year(self):
+        return self._year
+    
+    @year.setter
+    def year(self, value):
+        self._year = int(value)
     
     @property
     def year(self):
