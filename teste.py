@@ -31,16 +31,35 @@ if conn:
 else:
     print("Falha ao conectar ao banco de dados.")
 
-
+# Uncomment to test class Author
 from classes.author import Author
 test_class = Author
 ob = '302;Dawn Nelson;Canada;1994;1.8'
-db = 'Publishing.db'    
-
     
+
+#Uncomment to test class Book
+# from classes.book import Books
+# test_class = Books
+# ob='899;Now seek;Fiction;2021'
+
+#Uncomment to test class Awards
+# from classes.awards import Awards
+# test_class = Awards
+# ob='4;machine'
+
+# Uncomment to test class Books_Awards
+# from classes.book import Books
+# from classes.awards import Awards
+# from classes.bookawards import Books_Awards
+
+# test_class = Books_Awards
+
+
+ob='4;899;1985'
 
 
 #TESTE PARA VER OS REGISTOS DE UMA CLASSE 
+
 table_name = test_class.__name__  
 
 cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
@@ -52,6 +71,7 @@ else:
     print(f"A tabela '{table_name}' tem {quantidade} registros.")
    
 
+test_class.read(db_path)
 op = ''
 while op != 'q':
     print('')
