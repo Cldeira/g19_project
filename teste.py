@@ -51,9 +51,9 @@ else:
 from classes.book import Books
 from classes.awards import Awards
 from classes.bookawards import Books_Awards
+Books.read(db_path)   
+Awards.read(db_path)
 test_class = Books_Awards
-
-
 ob='1;4;899;1985'
 
 
@@ -69,8 +69,7 @@ if quantidade == 0:
 else:
     print(f"A tabela '{table_name}' tem {quantidade} registros.")
 
-Books.read(db_path)   
-Awards.read(db_path)
+
 test_class.read(db_path)
 op = ''
 while op != 'q':
