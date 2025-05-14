@@ -17,7 +17,6 @@ db_path = os.path.join(data_dir, 'Publishing.db')
 print(f"Caminho para a base de dados: {db_path}")
 
 
-
 #TESTE PARA VER SE CONECTA À DATABASE E AS RESPETIVAS TABELAS
 conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
