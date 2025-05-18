@@ -32,9 +32,9 @@ else:
     print("Falha ao conectar ao banco de dados.")
 
 
-# from classes.author import Author
-# test_class = Author
-# ob = '302;Dawn Nelson;Canada;1994;1.8'
+from classes.author import Author
+test_class = Author
+ob = '302;Dawn Nelson;Canada;1994;1.8'
     
 
 #Uncomment to test class Product
@@ -48,11 +48,11 @@ else:
 # ob='4;machine'
 
 # Uncomment to test class Order
-from classes.book import Books
-from classes.awards import Awards
-from classes.bookawards import Books_Awards
+# from classes.book import Books
+# from classes.awards import Awards
+# from classes.bookawards import Books_Awards
 
-test_class = Books_Awards
+# test_class = Books_Awards
 
 
 ob='4;899;1985'

@@ -1,10 +1,8 @@
-# -*- coding: utf-8 -*-
 """
-Created on Sat Apr  5 13:17:53 2025
-
-@author: Pedro
-"""
-
+@author: António Brito / Carlos Bragança
+(2025) objective: Generic class
+"""""
+# Generic Class
 import sys
 import datetime
 import sqlite3
@@ -66,7 +64,6 @@ class Gclass:
         else:
             code = cls.lst[cls.pos]
             return cls.obj[code]
-    
     @classmethod
     def first(cls):
         cls.pos = 0
@@ -151,8 +148,6 @@ class Gclass:
     def getatlist(cls, att):
         return [getattr(obj, att) for obj in list(cls.obj.values())]
     # Read objects from db file
-    
-    
     @classmethod
     def read(cls, path = ''):
         cls.obj = dict()
@@ -173,8 +168,6 @@ class Gclass:
         except BaseException as err:
             print(f"Error in read method:\n{err}\n{type(err)}")
             sys.exit()
-    
-  
     # Instance method to obtain object info
     def __str__(self):
         strprint = "f'"
@@ -203,4 +196,3 @@ class Gclass:
         except sqlite3.Error as er:
             print(f'sqlite error: {er}')
         return resul
-

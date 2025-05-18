@@ -22,7 +22,7 @@ from classes.author import Author
 test_class = Author
 ob = '302;Dawn Nelson;Canada;1994;1.8'
 
-from classes.Books_Awards import Books_Awards
+# from classes.Books_Awards import Books_Awards
 #Uncomment to test class Product
 # from classes.books=import Books
 # test_class = Books

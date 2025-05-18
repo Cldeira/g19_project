@@ -31,15 +31,15 @@ class Books(Gclass):
     
     @property
     def id(self):
-        return self._id
+        return self._books_id
     
     @property
     def title(self):
-        return self._title
+        return self._books_title
     
     @title.setter
     def title(self, value):
-        self._title = value
+        self._books_title = value
     
     @property
     def genre(self):

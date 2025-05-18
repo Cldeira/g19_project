@@ -30,11 +30,11 @@ class Awards(Gclass):
     
     @property
     def id(self):
-        return self._id
+        return self._awards_id
     
     @property
     def name(self):
-        return self._name
+        return self._award_name
     
     @name.setter
     def name(self, value):
