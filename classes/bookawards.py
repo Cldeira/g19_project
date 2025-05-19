@@ -27,27 +27,17 @@ class Books_Awards(Gclass):
         awards_id = int(awards_id)
         books_id = int(books_id)
         
-        if awards_id in Awards.lst:
+        if awards_id in Awards.lst and books_id in Books.lst:
+            id = Books_Awards.get_id(id)
+            self._id = id
+            self._awards_id = awards_id
+            self._books_id = books_id
+            self._year = int(year)
             
-            if books_id in Books.lst:
-            
-                id = Books_Awards.get_id(id)
-                self._id = id
-                self._awards_id = awards_id
-                self._books_id = books_id
-                self._year = int(year)
-                
-                Books_Awards.obj[id] = self
-                Books_Awards.lst.append(id)
-                
-            
-        #     else:
-        #         print('Invalid Books Id')
-
-        # else:
-        #     print('Invalid Awards Id')
-            
-            
+            Books_Awards.obj[id] = self
+            Books_Awards.lst.append(id)
+        else:
+            print('Invalid Awards Id or Books Id')
     
     @property
     def id(self):
@@ -74,14 +64,6 @@ class Books_Awards(Gclass):
             self._books_id = value
         else:
             print('Invalid Books Id')
-    
-    @property
-    def year(self):
-        return self._year
-    
-    @year.setter
-    def year(self, value):
-        self._year = int(value)
     
     @property
     def year(self):
