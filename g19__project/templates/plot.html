@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Página do Gráfico
+{% endblock %}
+
+{% block head_extra %}
+{% endblock %}
+
+{% block content %}
+    <div class="dados">
+        <img src="data:image/png;base64,{{ image }}" alt="Gráfico gerado">
+    </div>
+{% endblock %}
