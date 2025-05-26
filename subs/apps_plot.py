@@ -10,22 +10,22 @@ def apps_plot():
     engine = create_engine('sqlite:///data/' + 'Publishing.db')
     df_tabela = pd.read_sql_query("SELECT * FROM Author", con=engine)
 
-    resultado = df_tabela.groupby('authors_id')['royalty_percentage'].sum()
+    resultado = df_tabela.groupby('nationality')['authors_id'].sum()
     categorias = resultado.index
     ids = []
-    for categoria in categorias:
-        obj = Author.obj[categoria]
-        ids.append(str(categoria))
-
+    categorias=resultado.index.tolist()
+    ids= [str(categoria) for categoria in categorias]
     valores = resultado.values
+
+    
 
     fig, ax = plt.subplots(figsize=(10, 6))
     x_index = range(len(ids))
-    plt.bar(x_index, valores, width=0.4, label='Royalty Percentage')
+    plt.bar(x_index, valores, width=0.4, label='Nacionalidade')
     plt.xticks(ticks=x_index, labels=ids, rotation=45)
-    plt.xlabel('Author ID')
-    plt.ylabel('Royalty Percentage')
-    plt.title('Gráfico de Royalties por Autor')
+    plt.xlabel('Nacionalidade')
+    plt.ylabel('Número de Autores')
+    plt.title('Número de Autores por Nacionalidade')
     plt.tight_layout()
 
     buf = io.BytesIO()
