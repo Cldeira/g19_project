@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+{% endblock %}
+
+{% block content %}
+            {{ plot_div | safe }}
+            <br>
+            <div style="text-align: center;">
+                <a class="button" href="/">Back</a></li>
+            </div>
+
+{% endblock %}
