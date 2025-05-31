@@ -1,85 +1,135 @@
-body{
-    margin: 0;
-    min-height: 300px;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-nav{
-    width: 100%;
-    float: left;
+/* Fundo geral */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  color: #333;
+  min-height: 100vh;
+  padding: 20px;
 }
 
-.menu{
-    margin: 0;
-    padding: 8px;
-    height: 100%;
-    background-color: #334a94;
-
+/* Navegação */
+nav {
+  background-color: #343a40;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
 }
 
-.menu li{
-    display: inline;
+.menu {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.button{
-    font-family: Arial;
-    font-size: 1em;
-    font-style: none;
-    color: #ffffff;
-    padding: 8px;
-    text-decoration: none;
+.menu li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 15px;
+  background-color: #495057;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.button:link{
-    background-color: #334a94;
-    color: #ffffff;
+.menu li a:hover {
+  background-color: #6c757d;
 }
 
-.button:hover{
-    background-color: lightblue;
+/* Cabeçalho principal */
+h1 {
+  font-size: 2rem;
+  color: #212529;
+  margin-bottom: 20px;
 }
 
-.dados{
-        text-align: center;
-        font-size: 1em;
+/* Área de dados */
+.dados {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin: auto;
 }
 
-.button1{
-    font-family: Arial;
-    background-color: #334a94;
-    font-size: 1em;
-    font-style: none;
-    color: white;
-    padding: 4px;
-    border-radius: 5px}
+/* Formulário */
+form {
+  margin-top: 20px;
 }
 
-.button1:link{
-    background-color: #334a94;
-    color: #ffffff;
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #495057;
 }
 
-.button1:hover{
-    background-color: lightblue;
+input[type="text"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: #f8f9fa;
 }
 
-.button1:disabled{
-    background-color: lightgray;
+input[disabled] {
+  background-color: #e9ecef;
+  color: #6c757d;
 }
 
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 50%;
-  margin-left: auto; 
-  margin-right: auto;
+/* Botões */
+.button1 {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  margin: 5px 10px 5px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+.button1:hover {
+  background-color: #0b5ed7;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+.button {
+  background-color: #198754;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #157347;
+}
+
+/* Imagem */
+img {
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+  }
+
+  .dados {
+    padding: 20px;
+  }
 }
