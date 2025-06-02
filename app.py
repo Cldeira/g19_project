@@ -1,139 +1,3 @@
-# from flask import Flask, render_template, request, session
-# from classes.author import Author
-# from classes.awards import Awards
-# from classes.book import Books
-# from classes.bookawards import Books_Awards
-# from datafile import filename
-
-# app = Flask(__name__)
-# app.secret_key = 'BAD_SECRET_KEY'
-
-# Author.read(filename + 'Publishing.db')
-# Awards.read(filename + 'Publishing.db')
-
-# prev_option_authors = ""
-# prev_option_awards = ""
-
-# @app.route("/author", methods=["POST", "GET"])
-# def authors():
-#     global prev_option_authors
-#     butshow, butedit = "enabled", "disabled"
-#     option = request.args.get("option")
-
-#     if option == "edit":
-#         butshow, butedit = "disabled", "enabled"
-#     elif option == "delete":
-#         obj = Author.current()
-#         Author.remove(obj.id)
-#         if not Author.previous():
-#             Author.first()
-#     elif option == "insert":
-#         butshow, butedit = "disabled", "enabled"
-#     elif option == 'cancel':
-#         pass
-#     elif prev_option_authors == 'insert' and option == 'save':
-#         strobj = str(Author.get_id(0)) + ';' + request.form["_authors_name"] + ';' + \
-#                  request.form["_nationality"] + ';' + request.form["_birth_year"] + ';' + \
-#                  request.form["_royalty_percentage"]
-#         obj = Author.from_string(strobj)
-#         Author.insert(obj.id)
-#         Author.last()
-#     elif prev_option_authors == 'edit' and option == 'save':
-#         obj = Author.current()
-#         obj._authors_name = request.form["_authors_name"]
-#         obj._nationality = request.form["_nationality"]
-#         obj._birth_year = int(request.form["_birth_year"])
-#         obj._royalty_percentage = float(request.form["_royalty_percentage"])
-#         Author.update(obj.id)
-#     elif option == "first":
-#         Author.first()
-#     elif option == "previous":
-#         Author.previous()
-#     elif option == "next":
-#         Author.nextrec()
-#     elif option == "last":
-#         Author.last()
-#     elif option == 'exit':
-#         return "<h1>Thank you for using this app</h1>"
-
-#     prev_option_authors = option
-#     obj = Author.current()
-
-#     if option == 'insert' or len(Author.lst) == 0:
-#         id = Author.get_id(0)
-#         _authors_name = _nationality = _birth_year = _royalty_percentage = ""
-#     else:
-#         id = obj.id
-#         _authors_name = obj._authors_name
-#         _nationality = obj._nationality
-#         _birth_year = obj._birth_year
-#         _royalty_percentage = obj._royalty_percentage
-
-#     return render_template("index.html", tipo="author", butshow=butshow, butedit=butedit,
-#                            id=id, _authors_name=_authors_name, _nationality=_nationality,
-#                            _birth_year=_birth_year, royalty_percentage=_royalty_percentage,
-#                            ulogin=session.get("user"))
-
-
-# @app.route("/awards", methods=["POST", "GET"])
-# def awards():
-#     global prev_option_awards
-#     butshow, butedit = "enabled", "disabled"
-#     option = request.args.get("option")
-
-#     if option == "edit":
-#         butshow, butedit = "disabled", "enabled"
-#     elif option == "delete":
-#         obj = Awards.current()
-#         Awards.remove(obj.id)
-#         if not Awards.previous():
-#             Awards.first()
-#     elif option == "insert":
-#         butshow, butedit = "disabled", "enabled"
-#     elif option == 'cancel':
-#         pass
-#     elif prev_option_awards == 'insert' and option == 'save':
-#         strobj = str(Awards.get_id(0)) + ';' + request.form["_id"] + ';' + request.form["_name"]
-#         obj = Awards.from_string(strobj)
-#         Awards.insert(obj._id)
-#         Awards.last()
-#     elif prev_option_awards == 'edit' and option == 'save':
-#         obj = Awards.current()
-#         obj._awards_id = request.form["_awards_id"]
-#         obj._award_name = request.form["_award_name"]
-#         Awards.update(obj.id)
-#     elif option == "first":
-#         Awards.first()
-#     elif option == "previous":
-#         Awards.previous()
-#     elif option == "next":
-#         Awards.nextrec()
-#     elif option == "last":
-#         Awards.last()
-#     elif option == 'exit':
-#         return "<h1>Thank you for using this app</h1>"
-
-#     prev_option_awards = option
-#     obj = Awards.current()
-
-#     if option == 'insert' or len(Awards.lst) == 0:
-#         id = Awards.get_id(0)
-#         _awards_id = _award_name = ""
-#     else:
-#         id = obj.id
-#         _awards_id = obj._awards_id
-#         _award_name = obj._award_name
-
-#     return render_template("index.html", tipo="awards", butshow=butshow, butedit=butedit,
-#                            id=id, _awards_id=_awards_id, _award_name=_award_name,
-#                            ulogin=session.get("user"))
-
-
-
-
-# if __name__ == '__main__':
-#     app.run(debug=True, use_reloader=False)
-
 
 from flask import Flask, render_template, request, session
 from classes.author import Author
@@ -143,7 +7,7 @@ from classes.bookawards import Books_Awards
 from datafile import filename
 from classes.userlogin import Userlogin
 from subs.apps_plot import apps_plot
-
+from subs.apps_plotly import apps_plotly
 
 
 Userlogin.read(filename + 'users.db')
@@ -217,7 +81,7 @@ def authors():
         _birth_year = obj._birth_year
         _royalty_percentage = obj._royalty_percentage
 
-    return render_template("index.html", tipo="author", butshow=butshow, butedit=butedit,
+    return render_template("index2.html", tipo="author", butshow=butshow, butedit=butedit,
                            id=id, _authors_name=_authors_name, _nationality=_nationality,
                            _birth_year=_birth_year, royalty_percentage=_royalty_percentage,
                            ulogin=session.get("user"))
@@ -272,7 +136,7 @@ def awards():
         _awards_id = obj._awards_id
         _award_name = obj._award_name
 
-    return render_template("index.html", tipo="awards", butshow=butshow, butedit=butedit,
+    return render_template("index3.html", tipo="awards", butshow=butshow, butedit=butedit,
                             id=id, _awards_id=_awards_id, _award_name=_award_name,
                             ulogin=session.get("user"))
 
@@ -386,7 +250,7 @@ def books_awards():
         _books_id = obj._books_id
         _year = obj._year
 
-    return render_template("index.html", tipo="books_awards", butshow=butshow, butedit=butedit,
+    return render_template("index4.html", tipo="books_awards", butshow=butshow, butedit=butedit,
                             id=id, _awards_id=_awards_id, _books_id=_books_id, _year=_year,
                             ulogin=session.get("user"))
 @app.route("/")
@@ -401,9 +265,9 @@ def login():
 def plot():
     return apps_plot()
 
-# @app.route("/plotly", methods=["POST", "GET"])
-# def plotly():
-#     return apps_plotly()
+@app.route("/plotly", methods=["POST", "GET"])
+def plotly():
+    return apps_plotly()
 
 
 
