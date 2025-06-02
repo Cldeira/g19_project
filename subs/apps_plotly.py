@@ -16,7 +16,7 @@ def apps_plotly():
 
 
     # Create interactive plot with Plotly
-    fig = px.bar(x=resultado.index, y=resultado.values, labels={'x': 'Genre', 'y': 'Quantity'}, title='Total quantity ordered by product')
+    fig = px.bar(x=resultado.index, y=resultado.values, labels={'x': 'Genre', 'y': 'Books'}, title='Total books by genre')
 
     plot_div = fig.to_html(full_html=False, div_id='my-plot')
 
